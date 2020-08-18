@@ -2,24 +2,24 @@ version: '3.8'
 
 services:
   odb:
-    image: 'orientdb:3.1.1'
+    build: image-odb
     container_name: 'odb'
     volumes:
-      - ./scripts:/scripts
+      - ./apps:/apps
+      - ./apps.cnf:/apps.cnf
     environment:
       ORIENTDB_ROOT_PASSWORD: 'root'
     ports:
-      - '2425:2424'
-      - '2481:2480'
-    command: './scripts/apply-config-odb.sh'
+      - '2424:2424'
+      - '2480:2480'
   
   jupyter:
-    image: 'jupyter/scipy-notebook:latest'
+    build: image-jupyter
     container_name: 'jupyter'
     volumes:
-      - ./scripts:/scripts
+      - ./apps:/apps
+      - ./apps.cnf:/apps.cnf
     ports:
-      - '80:80'
+      - '8888:8888'
     depends_on:
       - odb
-    command: './scripts/apply-config-jupyter.sh'
