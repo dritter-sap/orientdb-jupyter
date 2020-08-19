@@ -5,17 +5,20 @@ echo -e "Applying config ..."
 user=$(whoami)
 echo -e "Current user: $user"
 
-while read -r line; do
+# Remove all databases
+rm -rf `find /orientdb/databases/ -type d ! -name "OSystem" ! -name "databases"`
+
+for line in $(<"/apps.cnf"); do
   # Copy databases
   line=$(echo $line | tr -d '\r' | tr -d '\n')
   echo -e "Copying $line …"
   dir="/apps/$line/databases"
   if [ -d $dir ]; then
     mkdir "/home/jovyan/$line"
-    find $dir -type d -exec cp -pr {} "/orientdb/databases/" \;
+    find $dir -type d ! -name "databases" -exec cp -pr {} "/orientdb/databases/" \;
   else
     echo -e "Error importing $dir. Directory does not exist."
   fi
-done < "/apps.cnf"
+done
 
 echo -e "Finished."

@@ -8,7 +8,10 @@ echo -e "Current user: $user"
 # Remove work dir
 if [ -d "/home/jovyan/work" ]; then rmdir "/home/jovyan/work"; fi
 
-while read -r line; do
+# Remove all notebooks
+rm -rf `find /home/jovyan/ -type d ! -name "jovyan" ! -wholename "*/.*"`
+
+for line in $(<"/apps.cnf"); do
   # Copy notebooks
   line=$(echo $line | tr -d '\r' | tr -d '\n')
   echo -e "Copying $line …"
@@ -19,6 +22,6 @@ while read -r line; do
   else
     echo -e "Error importing $dir. Directory does not exist."
   fi
-done < "/apps.cnf"
+done
 
 echo -e "Finished."
