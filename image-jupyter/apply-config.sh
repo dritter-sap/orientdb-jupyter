@@ -1,5 +1,4 @@
 #!/bin/bash
-
 echo -e "Applying config …"
 
 # Print current user

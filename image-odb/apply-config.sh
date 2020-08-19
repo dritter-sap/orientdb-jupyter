@@ -1,6 +1,5 @@
 #!/bin/bash
-
-echo "Applying config ..."
+echo -e "Applying config ..."
 
 # Print current user
 user=$(whoami)
@@ -19,4 +18,4 @@ while read -r line; do
   fi
 done < "/apps.cnf"
 
-echo "Finished."
+echo -e "Finished."
