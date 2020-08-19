@@ -23,3 +23,12 @@ user@local:~$ docker-compose up -d
 ## Work with the notebooks
 
 Open `http://localhost:8888/` in your browser of choice.
+Find the notebook configured in the `.cnf` file in the `root` directory.
+
+For example:
+
+```
+particulate-matter-app
+* emission-data-science.ipynb
+* emission-forecast.ipynb
+```
