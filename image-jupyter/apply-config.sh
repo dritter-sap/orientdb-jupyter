@@ -1,21 +1,25 @@
 #!/bin/bash
 
-echo "Applying config ..."
+echo -e "Applying config …"
+
+# Print current user
+user=$(whoami)
+echo -e "Current user: $user"
 
 # Remove work dir
-if [ -d "~/work" ]; then rmdir "~/work"; fi
+if [ -d "/home/jovyan/work" ]; then rmdir "/home/jovyan/work"; fi
 
-input="/apps.cnf"
-while IFS= read -r line
-do
+while read -r line; do
   # Copy notebooks
-  echo "Copying $line ..."
-  CURRENT_DIR="/apps/$line/notebooks"
-  if [ -d "$CURRENT_DIR" ]; then
-    cp /apps/$line/notebooks ~
+  line=$(echo $line | tr -d '\r' | tr -d '\n')
+  echo -e "Copying $line …"
+  dir="/apps/$line/notebooks"
+  if [ -d $dir ]; then
+    mkdir "/home/jovyan/$line"
+    find $dir -type f -exec cp -p {} "/home/jovyan/$line/" \;
   else
-    echo "Error importing $line. Directory does not exist."
+    echo -e "Error importing $dir. Directory does not exist."
   fi
-done < "$input"
+done < "/apps.cnf"
 
-echo "Finished."
+echo -e "Finished."
