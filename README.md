@@ -20,4 +20,6 @@ To start the environment, you have to execute following command in the root dire
 user@local:~$ docker-compose up -d
 ```
 
-## 
+## Work with the notebooks
+
+Open `http://localhost:8888/` in your browser of choice.
