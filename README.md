@@ -1,4 +1,6 @@
-# OrientDB Jupyter Demo Notebooks
+# OrientDB Jupyter Notebooks
+
+In this repository, we show how to use Jupyter notebooks to analyze data stored in OrientDB.
 
 ## Setup the demo environment
 
