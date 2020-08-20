@@ -3,8 +3,7 @@ USER root
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y git
-RUN git clone https://github.com/orientechnologies/pyorient.git /pyorient
+RUN pip install git+https://github.com/orientechnologies/pyorient.git#egg=pyorient
 
 EXPOSE 8888
 

@@ -1,4 +1,4 @@
-FROM orientdb:3.1.1
+FROM orientdb:2.2.37
 USER root
 
 RUN apt-get update
