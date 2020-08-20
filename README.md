@@ -23,6 +23,8 @@ To start the environment, you have to execute following command in the root dire
 user@local:~$ docker-compose up -d
 ```
 
+> Note: If changed, use `docker-compose build` to rebuild. The try again.
+
 ## Work with the notebooks
 
 OrientDB Studio will be available here: [http://localhost:2480](http://localhost:2480/studio/index.html)<br>
