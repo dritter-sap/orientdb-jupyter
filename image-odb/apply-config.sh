@@ -8,16 +8,16 @@ echo -e "Current user: $user"
 # Remove all databases
 rm -rf `find /orientdb/databases/ -type d ! -name "OSystem" ! -name "databases"`
 
-for line in $(<"/apps.cnf"); do
-  # Copy databases
-  line=$(echo $line | tr -d '\r' | tr -d '\n')
-  echo -e "Copying $line …"
-  dir="/apps/$line/databases"
+for app in $(<"/apps.cnf"); do
+  app=$(echo $app | tr -d '\r' | tr -d '\n')
+  echo -e "Copying $app …"
+  dir="/apps/$app/databases"
   if [ -d $dir ]; then
-    mkdir "/home/jovyan/$line"
+    # Copy databases
+    mkdir "/home/jovyan/$app"
     find $dir -type d ! -name "databases" -exec cp -pr {} "/orientdb/databases/" \;
   else
-    echo -e "Error importing $dir. Directory does not exist."
+    echo -e "Error importing $dir. App does not exist."
   fi
 done
 

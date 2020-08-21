@@ -5,22 +5,27 @@ echo -e "Applying config …"
 user=$(whoami)
 echo -e "Current user: $user"
 
+# Print python version
+echo -e $(python --version)
+
 # Remove work dir
 if [ -d "/home/jovyan/work" ]; then rmdir "/home/jovyan/work"; fi
 
 # Remove all notebooks
 rm -rf `find /home/jovyan/ -type d ! -name "jovyan" ! -wholename "*/.*"`
 
-for line in $(<"/apps.cnf"); do
-  # Copy notebooks
-  line=$(echo $line | tr -d '\r' | tr -d '\n')
-  echo -e "Copying $line …"
-  dir="/apps/$line/notebooks"
+for app in $(<"/apps.cnf"); do
+  app=$(echo $app | tr -d '\r' | tr -d '\n')
+  echo -e "Copying $app …"
+  dir="/apps/$app/notebooks"
   if [ -d $dir ]; then
-    mkdir "/home/jovyan/$line"
-    find $dir -type f -exec cp -p {} "/home/jovyan/$line/" \;
+    # Copy notebooks
+    mkdir "/home/jovyan/$app"
+    find $dir -type f -exec cp -p {} "/home/jovyan/$app/" \;
+    # Install dependencies
+    /run/install-dependencies.sh "/apps/$app/libs.cnf"
   else
-    echo -e "Error importing $dir. Directory does not exist."
+    echo -e "Error importing $dir. App does not exist."
   fi
 done
 

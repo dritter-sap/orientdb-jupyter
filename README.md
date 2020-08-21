@@ -22,6 +22,7 @@ To start the environment, you have to execute following command in the root dire
 ```console
 user@local:~$ docker-compose up -d
 ```
+Depending on the number of python libs, specified with the selected apps, it can take a few seconds / minutes for jupyter to come up.
 
 > Note: If changed, use `docker-compose build` to rebuild. The try again.
 
