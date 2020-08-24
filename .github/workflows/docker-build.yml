@@ -1,0 +1,34 @@
+name: CI with Docker
+
+on:
+  release:
+    types: [ published ]
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Prepare environment
+        run: |
+          export ARTIFACT_ID=orientdb-jupyter
+          echo "::set-env name=ARTIFACT_ID::${ARTIFACT_ID}"
+          export VERSION=0.1.0
+          echo "::set-env name=VERSION::${VERSION}"
+      - name: GH Packages deploy
+        uses: actions/upload-artifact@v1
+        with:
+          name: target
+          path: .
+      - name: docker build and push
+        run: |
+          echo ${GITHUB_TOKEN} | docker login docker.pkg.github.com -u ${GITHUB_REPOSITORY_OWNER} --password-stdin
+          docker build -t docker.pkg.github.com/orientechnologies/orientdb-jupyter/${ARTIFACT_ID}-jupyter:${VERSION} -t docker.pkg.github.com/orientechnologies/orientdb-jupyter/${ARTIFACT_ID}-jupyter:latest image-jupyter
+          docker push docker.pkg.github.com/orientechnologies/orientdb-jupyter/${ARTIFACT_ID}-jupyter:${VERSION}
+          docker push docker.pkg.github.com/orientechnologies/orientdb-jupyter/${ARTIFACT_ID}-jupyter:latest
+          docker build -t docker.pkg.github.com/orientechnologies/orientdb-jupyter/${ARTIFACT_ID}-odb:${VERSION} -t docker.pkg.github.com/orientechnologies/orientdb-jupyter/${ARTIFACT_ID}-odb:latest image-odb
+          docker push docker.pkg.github.com/orientechnologies/orientdb-jupyter/${ARTIFACT_ID}-odb:${VERSION}
+          docker push docker.pkg.github.com/orientechnologies/orientdb-jupyter/${ARTIFACT_ID}-odb:latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
