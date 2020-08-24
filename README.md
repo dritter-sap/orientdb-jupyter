@@ -15,7 +15,10 @@ To install Docker on your system, please follow the [installation guide](https:/
 After installing Docker, you need to install Docker Compose to orchestrate containers locally. Therefor, please use the [installation guide for Docker Compose](https://docs.docker.com/compose/install) from the official Docker documentation.
 
 ## Configure demo apps
-You can specify, which demo projects you want to load into the demo environment. Therefor, you can edit the `apps.cnf` file in the root directory of this repo.
+You can specify, which demo projects you want to load into the demo environment.
+Therefor, you can edit the `apps.cnf` file in the root directory of this repo.
+Within the specific app folder a `libs.cnf` can be used to specify required Python dependencies.
+The application-specific libraries are dynamically added and can be used in the notebook of this application.
 
 > Note: If you altered the configuration file, use the command `docker-compose restart` to apply the changes for the Docker containers.
 
