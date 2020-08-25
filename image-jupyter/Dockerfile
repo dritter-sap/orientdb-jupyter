@@ -10,6 +10,8 @@ EXPOSE 8888
 COPY apply-config.sh /run/apply-config.sh
 COPY install-dependencies.sh /run/install-dependencies.sh
 COPY base-libs.cnf /base-libs.cnf
+RUN chmod +x /run/apply-config.sh
+RUN chmod +x /run/install-dependencies.sh
 RUN sed -i -e 's/\r$//' /run/apply-config.sh
 RUN sed -i -e 's/\r$//' /run/install-dependencies.sh
 RUN /run/install-dependencies.sh "/base-libs.cnf"
