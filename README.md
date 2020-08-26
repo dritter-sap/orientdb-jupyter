@@ -15,7 +15,7 @@ user@local:~$ git clone https://github.com/orientechnologies/orientdb-jupyter.gi
 To install Docker on your system, please follow the [installation guide](https://docs.docker.com/get-docker) from the official Docker documentation.<br>
 After installing Docker, you need to install Docker Compose to orchestrate containers locally. Therefor, please use the [installation guide for Docker Compose](https://docs.docker.com/compose/install) from the official Docker documentation.
 
-> installation of python basis installation takes a while, hence docker images are provided as packages.
+> installation of python basis takes a while, hence docker images are provided as packages.
 
 ## Configure demo apps
 You can specify, which demo projects you want to load into the demo environment.
