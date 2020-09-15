@@ -41,7 +41,7 @@ Jupyter will be available here: [http://localhost](http://localhost)
 
 Find the notebook configured in the `.cnf` file in the `root` directory.
 
-For example:
+For example (particle matter emission app):
 
 ```
 particulate-matter-app
