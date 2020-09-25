@@ -48,3 +48,5 @@ particulate-matter-app
 * emission-data-science.ipynb
 * emission-forecast.ipynb
 ```
+
+> Hint: The emission app notebooks contain examples on how to use PyOrient.
