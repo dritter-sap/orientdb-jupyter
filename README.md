@@ -8,16 +8,19 @@ Subsequently we collected steps to setup the example apps which should give an i
 ## Setup the demo environment
 
 ### Clone this repository
+
 ```console
 user@local:~$ git clone https://github.com/orientechnologies/orientdb-jupyter.git orientdb-demos
 ```
 ### Setup Docker & Docker Compose
+
 To install Docker on your system, please follow the [installation guide](https://docs.docker.com/get-docker) from the official Docker documentation.<br>
 After installing Docker, you need to install Docker Compose to orchestrate containers locally. Therefor, please use the [installation guide for Docker Compose](https://docs.docker.com/compose/install) from the official Docker documentation.
 
 > installation of python basis takes a while, hence docker images are provided as packages.
 
 ## Configure demo apps
+
 You can specify, which demo projects you want to load into the demo environment.
 Therefor, you can edit the `apps.cnf` file in the root directory of this repo.
 Within the specific app folder a `libs.cnf` can be used to specify required Python dependencies.
@@ -26,6 +29,7 @@ The application-specific libraries are dynamically added and can be used in the 
 > Note: If you altered the configuration file, use the command `docker-compose restart` to apply the changes for the Docker containers.
 
 ## Start the environment
+
 To start the environment, you have to execute following command in the root directory of the cloned repository:
 ```console
 user@local:~$ docker-compose up -d
