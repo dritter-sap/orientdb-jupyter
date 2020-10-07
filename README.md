@@ -10,7 +10,7 @@ Subsequently we collected steps to setup the example apps which should give an i
 ### Clone this repository
 
 ```console
-user@local:~$ git clone https://github.com/orientechnologies/orientdb-jupyter.git orientdb-demos
+user@local:~$ git clone https://github.com/orientechnologies/orientdb-jupyter.git orientdb-jupyter-demos
 ```
 ### Setup Docker & Docker Compose
 
