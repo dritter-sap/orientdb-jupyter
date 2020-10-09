@@ -2,8 +2,8 @@
 
 In this repository, we show how to use Jupyter notebooks to analyze data stored in OrientDB accessed via PyOrient.
 The Docker files and scripts for Jupyter and OrientDB (incl. PyOrient) are generic and can be seen as blueprint for a Jupyter on OrientDB setup.
-The applications in the `apps` folder denote examples on how to use the blueprint.
-Subsequently we collected steps to setup the example apps which should give an impression on how to add and run your own app.
+The applications in the `apps` folder denote examples on how to use this blueprint.
+Subsequently we describe how to setup the example apps step-by-step, which should give an impression on how to add and run your own app.
 
 ## Setup the demo environment
 
