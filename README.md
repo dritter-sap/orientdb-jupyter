@@ -38,7 +38,7 @@ Depending on the number of python libs, specified with the selected apps, it can
 
 > Note: If changed, use `docker-compose build` to rebuild. The try again.
 
-## Work with the notebooks
+## Work with notebooks
 
 OrientDB Studio will be available here: [http://localhost:2480](http://localhost:2480/studio/index.html)<br>
 Jupyter will be available here: [http://localhost](http://localhost)
@@ -53,4 +53,4 @@ particulate-matter-app
 * emission-forecast.ipynb
 ```
 
-> Hint: The emission app notebooks contain examples on how to use PyOrient.
+> Hint: The emission app notebooks contain examples on how to use `PyOrient`.
