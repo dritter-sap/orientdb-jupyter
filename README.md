@@ -53,3 +53,4 @@ particulate-matter-app
 ```
 
 > Hint: The emission app notebooks contain examples on how to use `PyOrient` (cf. https://github.com/orientechnologies/pyorient/tree/master/pyorient).
+> Note: the currently supported OrientDB version is `2.2.37`.
