@@ -1,4 +1,4 @@
-# OrientDB Jupyter Notebooks
+# OrientDB Data Analysis -- Jupyter Notebooks
 
 Orientdb-jupyter gives an idea on how to use Jupyter notebooks to analyze data stored in OrientDB accessed via PyOrient.
 The Docker files and scripts for Jupyter and OrientDB (incl. PyOrient) are generic and can be seen as blueprint for a Jupyter on OrientDB setup.
