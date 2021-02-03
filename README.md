@@ -1,6 +1,6 @@
 # OrientDB Data Analysis -- Jupyter Notebooks
 
-Orientdb-jupyter gives an idea on how to use [Jupyter notebooks](https://jupyter.org/) to analyze data stored in [OrientDB](https://orientdb.org/) accessed via PyOrient.
+Orientdb-jupyter gives an idea on how to use [Jupyter notebooks](https://jupyter.org/) to analyze data stored in [OrientDB](https://orientdb.org/) accessed via [PyOrient](https://github.com/orientechnologies/pyorient).
 This is particularily interesting due to OrientDB's multimodel nature, allowing to do combined document and graph analytics.
 The Docker files and scripts for Jupyter and OrientDB (incl. PyOrient) are generic and can be seen as blueprint for a "Jupyter on OrientDB" setup.
 The applications in the `apps` folder denote examples on how to use this blueprint.
