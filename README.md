@@ -18,14 +18,14 @@ user@local:~$ git clone https://github.com/orientechnologies/orientdb-jupyter.gi
 ### Setup Docker & Docker Compose
 
 To install Docker on your system, please follow the [installation guide](https://docs.docker.com/get-docker) from the official Docker documentation.<br>
-After installing Docker, you need to install Docker Compose to orchestrate containers locally. Therefor, please use the [installation guide for Docker Compose](https://docs.docker.com/compose/install) from the official Docker documentation.
+After installing Docker, you need to install Docker Compose to orchestrate containers locally. Therefore, please use the [installation guide for Docker Compose](https://docs.docker.com/compose/install) from the official Docker documentation.
 
 > installation of python basis takes a while, hence docker images are provided as [packages](https://github.com/dritter-sap?tab=packages&repo_name=orientdb-jupyter).
 
 ## Configure demo apps
 
 You can specify, which demo projects you want to load into the demo environment.
-Therefor, you can edit the `apps.cnf` file in the root directory of this repo.
+Therefore, you can edit the `apps.cnf` file in the root directory of this repo.
 Within the specific app folder a `libs.cnf` can be used to specify required Python dependencies.
 The application-specific libraries are dynamically added and can be used in the notebook of this application.
 
