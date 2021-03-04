@@ -6,7 +6,7 @@ The [Docker](https://www.docker.com/) files and scripts for Jupyter and OrientDB
 The applications in the `apps` folder denote examples on how to use this blueprint.
 Subsequently we describe how to setup the example apps step-by-step, which should give an impression on how to add and run your own app.
 
-> **Note:** PyOrient is only available for OrientDB version [2.2.x](https://github.com/orientechnologies/pyorient/tree/2.2.x). The support for OrientDB version [3.1.x](https://github.com/orientechnologies/pyorient/tree/3.1.x) is work in progress.
+> **Note:** PyOrient is only available for OrientDB version [2.2.x](https://github.com/orientechnologies/pyorient/tree/2.2.x). The support for OrientDB version [3.1.x](https://github.com/orientechnologies/pyorient/tree/3.1.x) and beyond is work in progress.
  
 ## Setup the demo environment
 
