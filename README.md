@@ -6,7 +6,7 @@ The [Docker](https://www.docker.com/) files and scripts for Jupyter and OrientDB
 The applications in the `apps` folder denote examples on how to use this blueprint.
 Subsequently we describe how to setup the example apps step-by-step, which should give an impression on how to add and run your own app.
 
-> **Note:** PyOrient is only available for OrientDB version [2.2.x](https://github.com/orientechnologies/pyorient/tree/2.2.x). The support for OrientDB version [3.1.x](https://github.com/orientechnologies/pyorient/tree/3.1.x) and beyond is work in progress.
+> PyOrient is only available for OrientDB version [2.2.x](https://github.com/orientechnologies/pyorient/tree/2.2.x). The support for OrientDB version [3.1.x](https://github.com/orientechnologies/pyorient/tree/3.1.x) and beyond is work in progress.
  
 ## Setup the demo environment
 
@@ -29,7 +29,7 @@ Therefore, you can edit the `apps.cnf` file in the root directory of this repo.
 Within the specific app folder a `libs.cnf` can be used to specify required Python dependencies.
 The application-specific libraries are dynamically added and can be used in the notebook of this application.
 
-> Note: If you altered the configuration file, use the command `docker-compose restart` to apply the changes for the Docker containers.
+> If you altered the configuration file, use the command `docker-compose restart` to apply the changes for the Docker containers.
 
 ## Start the environment
 
@@ -39,7 +39,7 @@ user@local:~$ docker-compose up -d
 ```
 Depending on the number of python libs, specified with the selected apps, it can take a few seconds / minutes for jupyter to come up.
 
-> Note: If changed, use `docker-compose build` to rebuild. The try again.
+> If changed, use `docker-compose build` to rebuild. The try again.
 
 ## Work with notebooks
 
