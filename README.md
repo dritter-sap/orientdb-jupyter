@@ -39,7 +39,7 @@ user@local:~$ docker-compose up -d
 ```
 Depending on the number of python libs, specified with the selected apps, it can take a few seconds / minutes for jupyter to come up.
 
-> If changed, use `docker-compose build` to rebuild. The try again.
+> If changed, use `docker-compose build` to rebuild. Then try again.
 
 ## Work with notebooks
 
